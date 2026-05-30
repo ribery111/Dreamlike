@@ -1,7 +1,9 @@
+"use client";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, BarChart2, Users, MessageSquare } from "lucide-react";
 import { AuditForm } from "@/components/AuditForm";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { TextEffect } from "@/components/ui/text-effect";
 
 export default function Home() {
   return (
@@ -16,9 +18,13 @@ export default function Home() {
           </div>
 
           <h1 className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-5xl" data-acf-field="hero_h1">
-            Más clientes para tu negocio.{" "}
+            <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
+              Más clientes para tu negocio.
+            </TextEffect>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
-              Con datos reales.
+              <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold">
+                Con datos reales.
+              </TextEffect>
             </span>
           </h1>
 

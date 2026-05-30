@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle, FileText, Target, Map, Zap } from "lucide-reac
 import { AuditForm } from "@/components/AuditForm";
 import { QuizOverlay } from "@/components/QuizOverlay";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
+import { TextEffect } from "@/components/ui/text-effect";
 
 const DELIVERABLES = [
   { icon: Target, title: "Perfil de cliente ideal", desc: "Quién es, dónde está, qué busca y cuándo compra." },
@@ -45,8 +46,14 @@ export default function Auditorias() {
             Auditoría Comercial
           </span>
           <h1 className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-acf-field="auditorias_h1">
-            Descubre dónde están tus próximos clientes.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">En menos de 24 horas.</span>
+            <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Descubre dónde están tus próximos clientes.
+            </TextEffect>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+              <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold">
+                En menos de 24 horas.
+              </TextEffect>
+            </span>
           </h1>
           <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">
             Analizamos tu negocio, identificamos a tu cliente ideal y te entregamos un informe accionable con datos reales. Sin teoría. Sin esperas.

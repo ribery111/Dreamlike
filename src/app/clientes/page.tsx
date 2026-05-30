@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Database } from "lucide-react";
+import { TextEffect } from "@/components/ui/text-effect";
 
 const SECTORS = ["Restauración / Hostelería", "Clínicas / Salud", "Inmobiliarias", "Ecommerce", "Construcción", "Comercio local"];
 
@@ -86,8 +87,14 @@ export default function Clientes() {
             Listas de Clientes Potenciales
           </span>
           <h1 className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-acf-field="clientes_h1">
-            Tu próximo cliente ya existe.{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">Solo hay que encontrarlo.</span>
+            <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Tu próximo cliente ya existe.
+            </TextEffect>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+              <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold">
+                Solo hay que encontrarlo.
+              </TextEffect>
+            </span>
           </h1>
           <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">
             Te entregamos listas de clientes potenciales reales, filtradas por sector, zona y perfil. Datos verificados, listos para contactar.

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Clock, MessageSquare, ShoppingCart, Zap, PhoneCall, Star } from "lucide-react";
+import { TextEffect } from "@/components/ui/text-effect";
 
 const CHATBOT_FUNCTIONS = [
   "Responde preguntas frecuentes de forma instantánea (horarios, precios, servicios, ubicación).",
@@ -86,8 +87,14 @@ export default function Chatbots() {
             Chatbots para Pymes y Ecommerce
           </span>
           <h1 className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-acf-field="chatbots_h1">
-            Responde a tus clientes{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">24/7 sin estar tú.</span>
+            <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Responde a tus clientes
+            </TextEffect>{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+              <TextEffect per="word" preset="blur" delay={0.3} className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold">
+                24/7 sin estar tú.
+              </TextEffect>
+            </span>
           </h1>
           <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl">
             Configuramos un asistente inteligente para tu negocio que atiende, informa y capta clientes mientras tú duermes.
