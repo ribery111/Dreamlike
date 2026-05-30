@@ -5,7 +5,7 @@
 (function () {
   "use strict";
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function boot() {
     initBackground();
     initNavbar();
     initTextEffect();
@@ -13,7 +13,14 @@
     initForms();
     initQuiz();
     initStatGlow();
-  });
+  }
+  // Arrancar ya si el DOM está listo (LiteSpeed puede aplazar/combinar el
+  // script y cargarlo después de DOMContentLoaded → ese evento ya no dispara).
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+  } else {
+    boot();
+  }
 
   /* ---------- Fondo animado: tracking del puntero ---------- */
   function initBackground() {

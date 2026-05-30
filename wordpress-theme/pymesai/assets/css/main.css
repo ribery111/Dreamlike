@@ -332,8 +332,12 @@ table.lead-table td.name { color: #fff; font-weight: 500; }
 @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; animation: revealFallback 0s linear 1.2s forwards; }
+.reveal.in { opacity: 1; transform: translateY(0); animation: none; }
+@keyframes revealFallback { to { opacity: 1; transform: translateY(0); } }
+/* Failsafe título: si el JS no troceó las palabras, mostrar el texto igual */
+[data-text-effect] { animation: revealFallback 0s linear 1.2s forwards; }
+[data-text-effect]:has(.te-word) { animation: none; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }

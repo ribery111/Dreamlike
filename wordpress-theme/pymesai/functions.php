@@ -8,7 +8,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PYMESAI_VERSION', '1.0.1' );
+define( 'PYMESAI_VERSION', '1.0.2' );
 
 /* ------------------------------------------------------------------
  * 1. Soporte del tema
@@ -194,6 +194,19 @@ function pymesai_ensure_pages() {
 	}
 }
 add_action( 'admin_init', 'pymesai_ensure_pages' );
+
+/* ------------------------------------------------------------------
+ * 6b. Evitar que LiteSpeed Cache aplace/combine/minifique el JS del tema
+ *     (rompía la inicialización → secciones invisibles, sin animaciones).
+ * ------------------------------------------------------------------ */
+function pymesai_litespeed_exclude_js( $list ) {
+	$list   = is_array( $list ) ? $list : array();
+	$list[] = 'assets/js/main.js';
+	return $list;
+}
+add_filter( 'litespeed_optm_js_defer_exc', 'pymesai_litespeed_exclude_js' );
+add_filter( 'litespeed_optm_js_comb_exc', 'pymesai_litespeed_exclude_js' );
+add_filter( 'litespeed_optimize_js_excludes', 'pymesai_litespeed_exclude_js' );
 
 /* ------------------------------------------------------------------
  * 7. Body classes / limpieza
