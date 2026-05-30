@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 import { GlobalBackground } from "@/components/GlobalBackground";
 
 const poppins = Poppins({
@@ -46,7 +46,7 @@ export default function RootLayout({
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-1">{children}</main>
-          <Footer />
+          <CinematicFooter />
         </div>
       </body>
     </html>

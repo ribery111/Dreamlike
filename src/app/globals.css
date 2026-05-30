@@ -14,6 +14,13 @@
   --glass-light:  rgba(255, 255, 255, 0.02);
   --glass-border: rgba(255, 255, 255, 0.10);
   --glass-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Shadcn-style semantic tokens (used by motion-footer) */
+  --primary: #2563EB;
+  --secondary: #60A5FA;
+  --destructive: #EF4444;
+  --muted-foreground: rgba(255, 255, 255, 0.55);
+  --border: rgba(255, 255, 255, 0.10);
 }
 
 @theme inline {
@@ -26,6 +33,12 @@
   --color-brand-dark: #0F172A;
   --color-brand-gray: #64748B;
   --color-brand-light: #F1F5F9;
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-destructive: var(--destructive);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
 
   --animate-first: moveVertical 30s ease infinite;
   --animate-second: moveInCircle 20s reverse infinite;
