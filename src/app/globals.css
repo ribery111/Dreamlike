@@ -5,8 +5,15 @@
   --brand-dark: #0F172A;
   --brand-gray: #64748B;
   --brand-light: #F1F5F9;
-  --background: #ffffff;
-  --foreground: #0F172A;
+  --background: #04071c;
+  --foreground: #ffffff;
+
+  /* Glass layers */
+  --glass-heavy:  rgba(255, 255, 255, 0.06);
+  --glass-medium: rgba(255, 255, 255, 0.04);
+  --glass-light:  rgba(255, 255, 255, 0.02);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-border-strong: rgba(255, 255, 255, 0.18);
 }
 
 @theme inline {
@@ -39,6 +46,60 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins), system-ui, sans-serif;
 }
 
+/* Glass utility classes */
+.glass {
+  background: var(--glass-heavy);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.glass-section {
+  background: rgba(4, 7, 28, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.glass-dark {
+  background: rgba(4, 7, 28, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Input glass */
+.input-glass {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: white;
+  backdrop-filter: blur(8px);
+}
+
+.input-glass::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.input-glass:focus {
+  outline: none;
+  border-color: #2563EB;
+  background: rgba(37, 99, 235, 0.08);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+}
+
 @keyframes moveHorizontal {
   0%   { transform: translateX(-50%) translateY(-10%); }
   50%  { transform: translateX(50%) translateY(10%); }
@@ -67,9 +128,7 @@ h1, h2, h3, h4, h5, h6 {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 :focus-visible {
   outline: 2px solid #2563EB;

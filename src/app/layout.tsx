@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { GlobalBackground } from "@/components/GlobalBackground";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -40,10 +41,13 @@ export default function RootLayout({
       lang="es"
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white text-[#0F172A]">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-full flex flex-col text-white">
+        <GlobalBackground />
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

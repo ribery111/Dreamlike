@@ -1,84 +1,68 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, BarChart2, Users, MessageSquare } from "lucide-react";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { AuditForm } from "@/components/AuditForm";
 
 export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section data-acf-field="hero_home" className="pt-16">
-        <BackgroundGradientAnimation
-          gradientBackgroundStart="rgb(15, 23, 42)"
-          gradientBackgroundEnd="rgb(15, 23, 42)"
-          firstColor="37, 99, 235"
-          secondColor="29, 78, 216"
-          thirdColor="30, 58, 138"
-          fourthColor="15, 23, 42"
-          fifthColor="55, 65, 81"
-          pointerColor="96, 165, 250"
-          containerClassName="min-h-[90vh] h-auto py-24"
-          interactive={true}
-        >
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-            <h1
-              className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 max-w-4xl"
-              data-acf-field="hero_h1"
-            >
-              Más clientes para tu negocio.{" "}
-              <span className="text-[#2563EB]">Con datos reales.</span>
-            </h1>
-
-            <p
-              className="text-slate-300 text-lg sm:text-xl leading-relaxed mb-8 max-w-2xl"
-              data-acf-field="hero_subtitle"
-            >
-              Analizamos tu mercado, identificamos a tu cliente ideal y te decimos exactamente cómo llegar a él.{" "}
-              <strong className="text-white">En menos de 24 horas.</strong>
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 mb-10 text-sm text-slate-300">
-              {["Entrega en <24h", "Sin compromiso", "Datos verificados"].map((t) => (
-                <span key={t} className="flex items-center gap-1.5">
-                  <CheckCircle size={15} className="text-[#2563EB]" aria-hidden="true" />
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/auditorias#formulario"
-                className="bg-[#2563EB] hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg transition-colors duration-150 flex items-center gap-2 min-h-[48px] justify-center"
-              >
-                Quiero mi auditoría gratuita <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-              <Link
-                href="/auditorias"
-                className="border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white font-medium px-8 py-4 rounded-lg transition-colors duration-150 min-h-[48px] flex items-center justify-center"
-              >
-                Ver cómo funciona
-              </Link>
-            </div>
+      <section className="pt-28 pb-32 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center" data-acf-field="hero_home">
+        <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-semibold text-blue-300 border border-blue-500/20"
+            style={{ background: "rgba(37,99,235,0.12)", backdropFilter: "blur(8px)" }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" aria-hidden="true" />
+            Inteligencia. Datos. Resultados.
           </div>
-        </BackgroundGradientAnimation>
+
+          <h1 className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-5xl" data-acf-field="hero_h1">
+            Más clientes para tu negocio.{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+              Con datos reales.
+            </span>
+          </h1>
+
+          <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl" data-acf-field="hero_subtitle">
+            Analizamos tu mercado, identificamos a tu cliente ideal y te decimos exactamente cómo llegar a él.{" "}
+            <strong className="text-white/90">En menos de 24 horas.</strong>
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-5 mb-12 text-sm">
+            {["Entrega en <24h", "Sin compromiso", "Datos verificados"].map((t) => (
+              <span key={t} className="flex items-center gap-2 text-white/70">
+                <CheckCircle size={15} className="text-blue-400" aria-hidden="true" />{t}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link href="/auditorias#formulario"
+              className="bg-[#2563EB] hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)]">
+              Quiero mi auditoría gratuita <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <Link href="/auditorias"
+              className="px-8 py-4 rounded-xl font-medium min-h-[52px] flex items-center justify-center transition-all text-white/70 hover:text-white"
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}>
+              Ver cómo funciona
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* PROBLEMA */}
-      <section className="bg-white py-20 px-4 sm:px-6 lg:px-8" data-acf-field="problema_section">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="problema_section">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#0F172A] mb-12">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white mb-12">
             Si te reconoces en esto, es para ti.
           </h2>
-          <ul className="space-y-5 text-left" aria-label="Situaciones comunes">
+          <ul className="space-y-4 text-left" aria-label="Situaciones comunes">
             {[
               "Llevas tiempo buscando clientes sin un método claro.",
               "Has gastado en marketing y no sabes por qué no funcionó.",
               "Tu negocio depende de recomendaciones y no tienes control sobre las ventas.",
             ].map((t) => (
-              <li key={t} className="flex items-start gap-4 bg-[#F1F5F9] rounded-xl p-5">
-                <div className="w-2 h-2 rounded-full bg-[#2563EB] mt-2.5 shrink-0" aria-hidden="true" />
-                <p className="text-[#0F172A] text-base leading-relaxed">{t}</p>
+              <li key={t} className="glass-card flex items-start gap-4 p-5 transition-all hover:border-blue-500/20">
+                <div className="w-2 h-2 rounded-full bg-blue-400 mt-2.5 shrink-0 shadow-[0_0_6px_rgba(96,165,250,0.8)]" aria-hidden="true" />
+                <p className="text-white/75 text-base leading-relaxed">{t}</p>
               </li>
             ))}
           </ul>
@@ -86,58 +70,30 @@ export default function Home() {
       </section>
 
       {/* SOLUCIONES */}
-      <section className="bg-[#F1F5F9] py-20 px-4 sm:px-6 lg:px-8" data-acf-field="soluciones_section">
+      <section className="py-24 px-4 sm:px-6 lg:px-8" data-acf-field="soluciones_section">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#0F172A] text-center mb-12">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white text-center mb-14">
             Tres formas de conseguir más clientes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                icon: BarChart2,
-                title: "Auditoría Comercial",
-                desc: "Descubre dónde están tus próximos clientes.",
-                cta: "Solicitar auditoría",
-                href: "/auditorias",
-                primary: true,
-              },
-              {
-                icon: Users,
-                title: "Lista de Clientes",
-                desc: "Tu próximo cliente ya existe. Hay que encontrarlo.",
-                cta: "Ver listas",
-                href: "/clientes",
-                primary: false,
-              },
-              {
-                icon: MessageSquare,
-                title: "Chatbots",
-                desc: "Responde a tus clientes 24/7 sin estar tú.",
-                cta: "Ver chatbots",
-                href: "/chatbots",
-                primary: false,
-              },
+              { icon: BarChart2, title: "Auditoría Comercial", desc: "Descubre dónde están tus próximos clientes.", cta: "Solicitar auditoría", href: "/auditorias", primary: true },
+              { icon: Users, title: "Lista de Clientes", desc: "Tu próximo cliente ya existe. Hay que encontrarlo.", cta: "Ver listas", href: "/clientes", primary: false },
+              { icon: MessageSquare, title: "Chatbots", desc: "Responde a tus clientes 24/7 sin estar tú.", cta: "Ver chatbots", href: "/chatbots", primary: false },
             ].map((s) => (
-              <article
-                key={s.title}
-                className="bg-white rounded-2xl p-7 flex flex-col gap-4 border border-slate-100 hover:border-[#2563EB]/30 hover:shadow-lg transition-all duration-200"
-                data-acf-field="solucion_card"
-              >
-                <div className="w-12 h-12 bg-[#EFF6FF] rounded-xl flex items-center justify-center">
-                  <s.icon size={24} className="text-[#2563EB]" aria-hidden="true" />
+              <article key={s.title} className="glass-card p-7 flex flex-col gap-4 hover:border-blue-500/30 transition-all duration-200 group">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center"
+                  style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
+                  <s.icon size={22} className="text-blue-400" aria-hidden="true" />
                 </div>
-                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-[#0F172A]">
-                  {s.title}
-                </h3>
-                <p className="text-[#64748B] text-sm leading-relaxed flex-1">{s.desc}</p>
-                <Link
-                  href={s.href}
-                  className={`inline-flex items-center gap-2 font-semibold text-sm py-2.5 px-5 rounded-lg transition-colors min-h-[44px] ${
+                <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-white">{s.title}</h3>
+                <p className="text-white/55 text-sm leading-relaxed flex-1">{s.desc}</p>
+                <Link href={s.href}
+                  className={`inline-flex items-center gap-2 font-semibold text-sm py-2.5 px-5 rounded-xl transition-all min-h-[44px] ${
                     s.primary
-                      ? "bg-[#2563EB] text-white hover:bg-blue-600"
-                      : "border border-[#2563EB] text-[#2563EB] hover:bg-[#EFF6FF]"
-                  }`}
-                >
+                      ? "bg-[#2563EB] hover:bg-blue-500 text-white shadow-[0_0_16px_rgba(37,99,235,0.3)]"
+                      : "border border-blue-500/30 text-blue-400 hover:bg-blue-500/10"
+                  }`}>
                   {s.cta} <ArrowRight size={15} aria-hidden="true" />
                 </Link>
               </article>
@@ -147,42 +103,35 @@ export default function Home() {
       </section>
 
       {/* PRUEBA SOCIAL */}
-      <section className="bg-[#0F172A] py-16 px-4 sm:px-6 lg:px-8" data-acf-field="social_proof">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="social_proof">
         <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center mb-12">
             {[
               { stat: "+10 años", label: "de experiencia en captación comercial" },
               { stat: "<24h", label: "entrega garantizada" },
               { stat: "100%", label: "datos verificados" },
             ].map((s) => (
-              <div key={s.stat} data-acf-field="stat_item">
-                <div className="font-[family-name:var(--font-poppins)] text-4xl font-bold text-[#2563EB] mb-2">
+              <div key={s.stat}>
+                <div className="font-[family-name:var(--font-poppins)] text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-500 mb-2">
                   {s.stat}
                 </div>
-                <div className="text-slate-400 text-sm">{s.label}</div>
+                <div className="text-white/50 text-sm">{s.label}</div>
               </div>
             ))}
           </div>
-          <div
-            className="mt-12 border border-dashed border-slate-700 rounded-xl p-6 text-center"
-            data-acf-field="client_logos"
-          >
-            <p className="text-slate-600 text-xs">
-              Espacio reservado para logos de clientes
-            </p>
+          <div className="glass-card p-6 text-center border-dashed" data-acf-field="client_logos">
+            <p className="text-white/20 text-xs">Espacio reservado para logos de clientes</p>
           </div>
         </div>
       </section>
 
       {/* CTA FINAL */}
-      <section className="bg-white py-20 px-4 sm:px-6 lg:px-8" data-acf-field="cta_final_home">
+      <section className="py-24 px-4 sm:px-6 lg:px-8" data-acf-field="cta_final_home">
         <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-[#0F172A] mb-3">
+          <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white mb-3">
             Empieza hoy. Sin compromiso.
           </h2>
-          <p className="text-[#64748B] mb-8">
-            Cuéntanos lo básico. Tendrás la auditoría en menos de 24 horas.
-          </p>
+          <p className="text-white/50 mb-10">Cuéntanos lo básico. Tendrás la auditoría en menos de 24 horas.</p>
           <AuditForm id="cta-home" />
         </div>
       </section>

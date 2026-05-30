@@ -22,43 +22,32 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
+  useEffect(() => { setOpen(false); }, [pathname]);
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-[#0F172A]/95 backdrop-blur-md shadow-lg"
-          : "bg-[#0F172A]"
+          ? "bg-[rgba(4,7,28,0.75)] backdrop-blur-xl border-b border-white/10 shadow-[0_1px_24px_rgba(0,0,0,0.4)]"
+          : "bg-transparent"
       )}
-      data-acf-field="navbar"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 font-[family-name:var(--font-poppins)] font-700 text-xl text-white"
-            aria-label="PymesAI - Inicio"
-          >
+          <Link href="/" className="flex items-center font-[family-name:var(--font-poppins)] text-xl" aria-label="PymesAI">
             <span className="text-[#2563EB] font-bold">Pymes</span>
             <span className="text-white font-bold">AI</span>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Principal">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 className={cn(
                   "text-sm font-medium transition-colors duration-150",
-                  pathname === l.href
-                    ? "text-white"
-                    : "text-slate-300 hover:text-white"
+                  pathname === l.href ? "text-white" : "text-white/60 hover:text-white"
                 )}
               >
                 {l.label}
@@ -66,18 +55,15 @@ export function Navbar() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex">
             <Link
               href="/auditorias#formulario"
-              className="bg-[#2563EB] hover:bg-blue-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-white"
-              data-acf-field="nav_cta"
+              className="bg-[#2563EB] hover:bg-blue-500 text-white text-sm font-semibold px-5 py-2.5 rounded-lg transition-colors duration-150 shadow-[0_0_20px_rgba(37,99,235,0.4)]"
             >
               Solicitar auditoría
             </Link>
           </div>
 
-          {/* Mobile: CTA + hamburger */}
           <div className="flex md:hidden items-center gap-3">
             <Link
               href="/auditorias#formulario"
@@ -97,17 +83,16 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-[#0F172A] border-t border-slate-800 px-4 pb-4 pt-2">
+        <div className="md:hidden bg-[rgba(4,7,28,0.95)] backdrop-blur-xl border-t border-white/10 px-4 pb-4 pt-2">
           <nav className="flex flex-col gap-1" aria-label="Menú móvil">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
                 className={cn(
-                  "py-3 text-sm font-medium border-b border-slate-800 last:border-0",
-                  pathname === l.href ? "text-white" : "text-slate-300"
+                  "py-3 text-sm font-medium border-b border-white/10 last:border-0",
+                  pathname === l.href ? "text-white" : "text-white/60"
                 )}
               >
                 {l.label}
