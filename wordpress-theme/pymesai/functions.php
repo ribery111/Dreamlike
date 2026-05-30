@@ -149,7 +149,11 @@ function pymesai_create_pages() {
 	$home_id = 0;
 	foreach ( $pages as $slug => $data ) {
 		$existing = get_page_by_path( $slug );
-		if ( $existing ) { if ( 'home' === $slug ) { $home_id = $existing->ID; } continue; }
+		if ( $existing ) {
+			if ( 'home' === $slug ) { $home_id = $existing->ID; }
+			elseif ( $data['template'] ) { update_post_meta( $existing->ID, '_wp_page_template', $data['template'] ); }
+			continue;
+		}
 		$id = wp_insert_post( array(
 			'post_type'   => 'page',
 			'post_status' => 'publish',
@@ -165,8 +169,31 @@ function pymesai_create_pages() {
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $home_id );
 	}
+	// Refrescar reglas de reescritura para que /auditorias, /clientes... no den 404.
+	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'pymesai_create_pages' );
+
+/* Auto-reparación: si faltan las páginas (p.ej. al re-subir el ZIP sobre
+ * el tema ya activo, donde 'after_switch_theme' no se dispara), las crea
+ * y asigna las plantillas en la siguiente carga del admin. */
+function pymesai_ensure_pages() {
+	if ( ! is_admin() ) { return; }
+	$needed = array( 'home', 'auditorias', 'clientes', 'chatbots' );
+	foreach ( $needed as $slug ) {
+		$page = get_page_by_path( $slug );
+		$tpl_ok = true;
+		if ( $page && 'home' !== $slug ) {
+			$tpl  = get_post_meta( $page->ID, '_wp_page_template', true );
+			$tpl_ok = ( 'page-' . $slug . '.php' === $tpl );
+		}
+		if ( ! $page || ! $tpl_ok ) {
+			pymesai_create_pages();
+			return;
+		}
+	}
+}
+add_action( 'admin_init', 'pymesai_ensure_pages' );
 
 /* ------------------------------------------------------------------
  * 7. Body classes / limpieza
