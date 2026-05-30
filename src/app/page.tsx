@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, BarChart2, Users, MessageSquare } from "lucide-react";
 import { AuditForm } from "@/components/AuditForm";
+import { GlowingShadow } from "@/components/ui/glowing-shadow";
 
 export default function Home() {
   return (
@@ -104,22 +105,25 @@ export default function Home() {
 
       {/* PRUEBA SOCIAL */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="social_proof">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center mb-12">
+        <div className="max-w-5xl mx-auto">
+          {/* Stats con GlowingShadow */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             {[
               { stat: "+10 años", label: "de experiencia en captación comercial" },
               { stat: "<24h", label: "entrega garantizada" },
               { stat: "100%", label: "datos verificados" },
             ].map((s) => (
-              <div key={s.stat}>
-                <div className="font-[family-name:var(--font-poppins)] text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-500 mb-2">
-                  {s.stat}
+              <GlowingShadow key={s.stat}>
+                <div className="flex flex-col items-center justify-center text-center px-2">
+                  <span className="font-[family-name:var(--font-poppins)] text-3xl font-bold text-white leading-none mb-1">
+                    {s.stat}
+                  </span>
+                  <span className="text-white/50 text-xs leading-tight max-w-[120px]">{s.label}</span>
                 </div>
-                <div className="text-white/50 text-sm">{s.label}</div>
-              </div>
+              </GlowingShadow>
             ))}
           </div>
-          <div className="glass-card p-6 text-center border-dashed" data-acf-field="client_logos">
+          <div className="glass-card p-6 text-center" data-acf-field="client_logos">
             <p className="text-white/20 text-xs">Espacio reservado para logos de clientes</p>
           </div>
         </div>
