@@ -8,7 +8,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-define( 'PYMESAI_VERSION', '1.0.0' );
+define( 'PYMESAI_VERSION', '1.0.1' );
 
 /* ------------------------------------------------------------------
  * 1. Soporte del tema
