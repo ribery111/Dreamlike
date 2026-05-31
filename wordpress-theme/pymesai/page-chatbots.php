@@ -115,7 +115,7 @@ if ( empty( $steps ) ) { $steps = array(
 		<div class="steps">
 			<?php foreach ( $steps as $i => $s ) : ?>
 				<div class="step reveal">
-					<div class="step-num" style="background:rgba(37,99,235,.15);border-color:rgba(37,99,235,.25);color:#60a5fa;box-shadow:none"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></div>
+					<div class="step-num" style="background:rgba(255,91,20,.15);border-color:rgba(255,91,20,.25);color:#fb923c;box-shadow:none"><?php echo esc_html( sprintf( '%02d', $i + 1 ) ); ?></div>
 					<div class="step-body">
 						<h3><?php echo esc_html( $s['title'] ); ?></h3>
 						<p><?php echo esc_html( $s['desc'] ); ?></p>

@@ -68,7 +68,7 @@ $icons = array(
 		<ul class="check-list" style="text-align:left">
 			<?php foreach ( $problems as $p ) : ?>
 				<li class="glass-card check-item reveal">
-					<span style="width:8px;height:8px;border-radius:999px;background:#60a5fa;margin-top:.6rem;flex-shrink:0;box-shadow:0 0 6px rgba(96,165,250,.8)"></span>
+					<span style="width:8px;height:8px;border-radius:999px;background:#fb923c;margin-top:.6rem;flex-shrink:0;box-shadow:0 0 6px rgba(251,146,60,.8)"></span>
 					<p style="font-size:1rem;color:rgba(255,255,255,.75)"><?php echo esc_html( $p ); ?></p>
 				</li>
 			<?php endforeach; ?>

@@ -24,9 +24,9 @@ $form_id = isset( $args['id'] ) ? $args['id'] : 'formulario';
 			<div class="field">
 				<label for="<?php echo esc_attr( $form_id ); ?>_tipo">Tipo de negocio <span class="req">*</span></label>
 				<select class="input-glass" id="<?php echo esc_attr( $form_id ); ?>_tipo" name="tipo_negocio" required data-required data-msg="Selecciona el tipo de negocio" style="cursor:pointer">
-					<option value="" style="background:#0a0f2e">Selecciona tu sector</option>
+					<option value="" style="background:#000">Selecciona tu sector</option>
 					<?php foreach ( array( 'Restauración / Hostelería', 'Clínica / Salud', 'Inmobiliaria', 'Construcción', 'Comercio local', 'Ecommerce', 'Servicios profesionales', 'Otro' ) as $t ) : ?>
-						<option value="<?php echo esc_attr( $t ); ?>" style="background:#0a0f2e"><?php echo esc_html( $t ); ?></option>
+						<option value="<?php echo esc_attr( $t ); ?>" style="background:#000"><?php echo esc_html( $t ); ?></option>
 					<?php endforeach; ?>
 				</select>
 			</div>
@@ -55,7 +55,7 @@ $form_id = isset( $args['id'] ) ? $args['id'] : 'formulario';
 	<p class="form-note">Sin spam. Sin compromiso. Recibirás tu informe en menos de 24 horas.</p>
 
 	<div data-form-success style="display:none;text-align:center;padding:2rem 0">
-		<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" style="margin:0 auto 1rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+		<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF5B14" stroke-width="2" style="margin:0 auto 1rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 		<h3 class="h3" style="margin-bottom:.5rem">Lo hemos recibido.</h3>
 		<p class="muted" style="font-size:.875rem" data-success-msg>Nuestro equipo ya está analizando tu caso. Recibirás tu auditoría en menos de 24 horas.</p>
 	</div>

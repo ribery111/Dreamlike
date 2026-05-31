@@ -91,7 +91,7 @@ $mock = array(
 		<div class="grid grid-3">
 			<?php foreach ( array( 'Datos públicos verificados', 'Filtrado por tu perfil de cliente', 'Entrega en menos de 24h' ) as $t ) : ?>
 				<div class="glass-card text-center reveal" style="padding:1rem">
-					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" style="margin:0 auto .5rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fb923c" stroke-width="2" style="margin:0 auto .5rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 					<p style="color:rgba(255,255,255,.7);font-size:.875rem;font-weight:500;margin:0"><?php echo esc_html( $t ); ?></p>
 				</div>
 			<?php endforeach; ?>

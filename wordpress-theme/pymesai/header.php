@@ -34,6 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 		<div class="g-interactive"></div>
 	</div>
 </div>
+<div class="bg-overlay" aria-hidden="true"></div>
 
 <div class="site-content">
 

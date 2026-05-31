@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 	</form>
 
 	<div data-form-success style="display:none;text-align:center;padding:2rem 0">
-		<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" style="margin:0 auto 1rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+		<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF5B14" stroke-width="2" style="margin:0 auto 1rem"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
 		<h3 class="h3" style="margin-bottom:.5rem">¡Demo solicitada!</h3>
 		<p class="muted" style="font-size:.875rem" data-success-msg>Nos ponemos en contacto contigo en menos de 24 horas para mostrarte el chatbot en acción.</p>
 	</div>
