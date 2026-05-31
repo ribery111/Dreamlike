@@ -87,7 +87,7 @@ if ( empty( $objections ) ) { $objections = array(
 		<span class="eyebrow"><?php pymesai_the_field( 'a_eyebrow', 'Auditoría Comercial' ); ?></span>
 		<h1 class="h1" style="font-size:clamp(2.25rem,5vw,3.75rem)">
 			<span data-text-effect><?php pymesai_the_field( 'a_title_1', 'Descubre dónde están tus próximos clientes.' ); ?></span>
-			<span class="gradient-text" data-text-effect data-delay="0.4"><?php pymesai_the_field( 'a_title_2', 'En menos de 24 horas.' ); ?></span>
+			<span class="gradient-text" style="opacity:0;animation:fadeIn .6s ease .5s forwards"><?php pymesai_the_field( 'a_title_2', 'En menos de 24 horas.' ); ?></span>
 		</h1>
 		<p class="lead"><?php pymesai_the_field( 'a_subtitle', 'Analizamos tu negocio, identificamos a tu cliente ideal y te entregamos un informe accionable con datos reales. Sin teoría. Sin esperas.' ); ?></p>
 		<div class="badges" style="margin-bottom:3rem">

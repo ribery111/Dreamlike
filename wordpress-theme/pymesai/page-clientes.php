@@ -29,7 +29,7 @@ $mock = array(
 		<span class="eyebrow"><?php pymesai_the_field( 'c_eyebrow', 'Listas de Clientes Potenciales' ); ?></span>
 		<h1 class="h1" style="font-size:clamp(2.25rem,5vw,3.75rem)">
 			<span data-text-effect><?php pymesai_the_field( 'c_title_1', 'Tu próximo cliente ya existe.' ); ?></span>
-			<span class="gradient-text" data-text-effect data-delay="0.4"><?php pymesai_the_field( 'c_title_2', 'Solo hay que encontrarlo.' ); ?></span>
+			<span class="gradient-text" style="opacity:0;animation:fadeIn .6s ease .5s forwards"><?php pymesai_the_field( 'c_title_2', 'Solo hay que encontrarlo.' ); ?></span>
 		</h1>
 		<p class="lead"><?php pymesai_the_field( 'c_subtitle', 'Te entregamos listas de clientes potenciales reales, filtradas por sector, zona y perfil. Datos verificados, listos para contactar.' ); ?></p>
 		<a href="#muestra" class="btn btn-primary" style="margin-top:2.5rem">Quiero ver una muestra <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>

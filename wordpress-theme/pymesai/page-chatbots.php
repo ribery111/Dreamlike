@@ -49,7 +49,7 @@ if ( empty( $steps ) ) { $steps = array(
 		<span class="eyebrow"><?php pymesai_the_field( 'cb_eyebrow', 'Chatbots para Pymes y Ecommerce' ); ?></span>
 		<h1 class="h1" style="font-size:clamp(2.25rem,5vw,3.75rem)">
 			<span data-text-effect><?php pymesai_the_field( 'cb_title_1', 'Responde a tus clientes' ); ?></span>
-			<span class="gradient-text" data-text-effect data-delay="0.3"><?php pymesai_the_field( 'cb_title_2', '24/7 sin estar tú.' ); ?></span>
+			<span class="gradient-text" style="opacity:0;animation:fadeIn .6s ease .5s forwards"><?php pymesai_the_field( 'cb_title_2', '24/7 sin estar tú.' ); ?></span>
 		</h1>
 		<p class="lead"><?php pymesai_the_field( 'cb_subtitle', 'Configuramos un asistente inteligente para tu negocio que atiende, informa y capta clientes mientras tú duermes.' ); ?></p>
 		<div class="badges" style="margin-bottom:3rem">

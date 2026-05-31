@@ -46,7 +46,7 @@ $icons = array(
 		<span class="eyebrow"><span class="dot"></span><?php pymesai_the_field( 'h_eyebrow', 'Inteligencia. Datos. Resultados.' ); ?></span>
 		<h1 class="h1">
 			<span data-text-effect><?php pymesai_the_field( 'h_title_1', 'Más clientes para tu negocio.' ); ?></span>
-			<span class="gradient-text" data-text-effect data-delay="0.4"><?php pymesai_the_field( 'h_title_2', 'Con datos reales.' ); ?></span>
+			<span class="gradient-text" style="opacity:0;animation:fadeIn .6s ease .5s forwards"><?php pymesai_the_field( 'h_title_2', 'Con datos reales.' ); ?></span>
 		</h1>
 		<p class="lead"><?php pymesai_the_field( 'h_subtitle', 'Analizamos tu mercado, identificamos a tu cliente ideal y te decimos exactamente cómo llegar a él. En menos de 24 horas.' ); ?></p>
 		<div class="badges" style="margin-bottom:3rem">
