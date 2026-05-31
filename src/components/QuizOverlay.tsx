@@ -44,7 +44,7 @@ export function QuizOverlay({ onComplete }: { onComplete: (qualify: boolean) => 
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={close} aria-hidden="true" />
 
       <div className="relative w-full max-w-md rounded-2xl p-6 shadow-2xl animate-[slideUp_0.3s_ease]"
-        style={{ background: "rgba(4,7,28,0.85)", backdropFilter: "blur(24px)", border: "1px solid rgba(255,255,255,0.12)" }}>
+        style={{ background: "rgba(0,0,0,0.85)", backdropFilter: "blur(24px)", border: "1px solid rgba(255,255,255,0.12)" }}>
         <button onClick={close} aria-label="Cerrar"
           className="absolute top-4 right-4 text-white/40 hover:text-white p-1 min-h-[44px] min-w-[44px] flex items-center justify-center transition-colors">
           <X size={18} />
@@ -54,7 +54,7 @@ export function QuizOverlay({ onComplete }: { onComplete: (qualify: boolean) => 
           <div className="flex gap-1.5 mb-5" aria-hidden="true">
             {QUESTIONS.map((_, i) => (
               <div key={i} className={cn("h-1 flex-1 rounded-full transition-all duration-300",
-                i <= step ? "bg-[#2563EB] shadow-[0_0_6px_rgba(37,99,235,0.6)]" : "bg-white/10")} />
+                i <= step ? "bg-[#FF5B14] shadow-[0_0_6px_rgba(255,91,20,0.6)]" : "bg-white/10")} />
             ))}
           </div>
         )}
@@ -65,7 +65,7 @@ export function QuizOverlay({ onComplete }: { onComplete: (qualify: boolean) => 
             <p className="text-white/60 text-sm mb-6 leading-relaxed">¿Tu negocio podría tener más clientes de los que tiene ahora?</p>
             <div className="flex gap-3">
               <button onClick={() => handleIntro(true)}
-                className="flex-1 bg-[#2563EB] hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-colors min-h-[44px] shadow-[0_0_16px_rgba(37,99,235,0.3)]">
+                className="flex-1 bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold py-3 rounded-xl transition-colors min-h-[44px] shadow-[0_0_16px_rgba(255,91,20,0.3)]">
                 Sí, creo que sí
               </button>
               <button onClick={() => handleIntro(false)}
@@ -82,7 +82,7 @@ export function QuizOverlay({ onComplete }: { onComplete: (qualify: boolean) => 
             <h2 className="font-[family-name:var(--font-poppins)] text-lg font-bold text-white mb-6 leading-snug">{QUESTIONS[step]}</h2>
             <div className="flex gap-3">
               <button onClick={() => handleAnswer(true)}
-                className="flex-1 bg-[#2563EB] hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-colors min-h-[44px] shadow-[0_0_16px_rgba(37,99,235,0.3)]">
+                className="flex-1 bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold py-3 rounded-xl transition-colors min-h-[44px] shadow-[0_0_16px_rgba(255,91,20,0.3)]">
                 Sí
               </button>
               <button onClick={() => handleAnswer(false)}

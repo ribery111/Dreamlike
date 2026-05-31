@@ -41,15 +41,15 @@ export default function Auditorias() {
       {/* HERO */}
       <section className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center" data-acf-field="hero_auditorias">
         <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center">
-          <span className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold text-blue-300 mb-6"
-            style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
+          <span className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold text-orange-300 mb-6"
+            style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
             Auditoría Comercial
           </span>
           <h1 className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-acf-field="auditorias_h1">
             <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Descubre dónde están tus próximos clientes.
             </TextEffect>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">
               <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold">
                 En menos de 24 horas.
               </TextEffect>
@@ -61,13 +61,13 @@ export default function Auditorias() {
           <div className="flex flex-wrap justify-center gap-5 mb-12 text-sm">
             {["Entrega en <24h", "Datos verificados", "Sin compromiso"].map((t) => (
               <span key={t} className="flex items-center gap-2 text-white/70">
-                <CheckCircle size={15} className="text-blue-400" aria-hidden="true" />{t}
+                <CheckCircle size={15} className="text-orange-400" aria-hidden="true" />{t}
               </span>
             ))}
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="#formulario"
-              className="bg-[#2563EB] hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all">
+              className="bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(255,91,20,0.4)] transition-all">
               Quiero mi auditoría <ArrowRight size={18} />
             </Link>
             <Link href="#como-funciona"
@@ -92,16 +92,16 @@ export default function Auditorias() {
               "Trabajas por recomendaciones o inercia, sin un sistema claro para conseguir clientes nuevos.",
               "Tienes una tienda online con tráfico pero no sabes por qué no convierte ni a quién atacar.",
             ].map((t, i) => (
-              <div key={i} className="glass-card flex items-start gap-4 p-5 hover:border-blue-500/20 transition-all">
-                <CheckCircle size={18} className="text-blue-400 mt-0.5 shrink-0" aria-hidden="true" />
+              <div key={i} className="glass-card flex items-start gap-4 p-5 hover:border-orange-500/20 transition-all">
+                <CheckCircle size={18} className="text-orange-400 mt-0.5 shrink-0" aria-hidden="true" />
                 <p className="text-white/70 text-sm leading-relaxed">{t}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-2">
             {SECTORS.map((s) => (
-              <span key={s} className="text-xs font-semibold px-3 py-1.5 rounded-full text-blue-300"
-                style={{ background: "rgba(37,99,235,0.12)", border: "1px solid rgba(37,99,235,0.2)" }}>
+              <span key={s} className="text-xs font-semibold px-3 py-1.5 rounded-full text-orange-300"
+                style={{ background: "rgba(255,91,20,0.12)", border: "1px solid rgba(255,91,20,0.2)" }}>
                 {s}
               </span>
             ))}
@@ -120,10 +120,10 @@ export default function Auditorias() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {DELIVERABLES.map((d) => (
-              <article key={d.title} className="glass-card p-6 hover:border-blue-500/20 transition-all">
+              <article key={d.title} className="glass-card p-6 hover:border-orange-500/20 transition-all">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
-                  <d.icon size={18} className="text-blue-400" aria-hidden="true" />
+                  style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
+                  <d.icon size={18} className="text-orange-400" aria-hidden="true" />
                 </div>
                 <h3 className="font-[family-name:var(--font-poppins)] font-bold text-white mb-2">{d.title}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">{d.desc}</p>
@@ -145,8 +145,8 @@ export default function Auditorias() {
           <div className="space-y-4">
             {IDEA_STEPS.map((s, i) => (
               <div key={s.code} className="flex gap-5 items-start">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 font-[family-name:var(--font-poppins)] font-bold text-white shadow-[0_0_12px_rgba(37,99,235,0.4)]"
-                  style={{ background: "rgba(37,99,235,0.8)", border: "1px solid rgba(37,99,235,0.5)" }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 font-[family-name:var(--font-poppins)] font-bold text-white shadow-[0_0_12px_rgba(255,91,20,0.4)]"
+                  style={{ background: "rgba(255,91,20,0.8)", border: "1px solid rgba(255,91,20,0.5)" }}>
                   {s.code}
                 </div>
                 <div className={`flex-1 pb-6 ${i < IDEA_STEPS.length - 1 ? "border-b border-white/8" : ""}`}>
@@ -190,9 +190,9 @@ export default function Auditorias() {
           <div className="space-y-3">
             {OBJECIONES.map((o) => (
               <details key={o.q} className="glass-card group overflow-hidden">
-                <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-[family-name:var(--font-poppins)] font-semibold text-white text-sm hover:text-blue-300 transition-colors select-none min-h-[56px]">
+                <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-[family-name:var(--font-poppins)] font-semibold text-white text-sm hover:text-orange-300 transition-colors select-none min-h-[56px]">
                   {o.q}
-                  <span className="text-blue-400 ml-4 text-lg leading-none" aria-hidden="true">+</span>
+                  <span className="text-orange-400 ml-4 text-lg leading-none" aria-hidden="true">+</span>
                 </summary>
                 <div className="px-6 pb-5 text-white/55 text-sm leading-relaxed border-t border-white/8 pt-4">{o.a}</div>
               </details>

@@ -44,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col text-white">
         <div className="fixed inset-0 -z-10">
           <GradientBackground />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />

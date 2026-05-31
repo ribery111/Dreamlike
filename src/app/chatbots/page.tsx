@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 import { ArrowRight, CheckCircle, Clock, MessageSquare, ShoppingCart, Zap, PhoneCall, Star } from "lucide-react";
 import { TextEffect } from "@/components/ui/text-effect";
 
@@ -42,7 +41,7 @@ function ChatbotForm() {
   if (sent) {
     return (
       <div className="text-center py-8" role="status">
-        <CheckCircle className="mx-auto mb-4 text-blue-400" size={40} />
+        <CheckCircle className="mx-auto mb-4 text-orange-400" size={40} />
         <h3 className="font-[family-name:var(--font-poppins)] font-bold text-white text-lg mb-2">¡Demo solicitada!</h3>
         <p className="text-white/55 text-sm">Nos ponemos en contacto contigo en menos de 24 horas para mostrarte el chatbot en acción.</p>
       </div>
@@ -68,7 +67,7 @@ function ChatbotForm() {
           {errors[f.key] && <p className="text-red-400 text-xs mt-1" role="alert">{errors[f.key]}</p>}
         </div>
       ))}
-      <button type="submit" className="w-full bg-[#2563EB] hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-xl transition-all min-h-[44px] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+      <button type="submit" className="w-full bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-all min-h-[44px] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,91,20,0.3)]">
         Quiero una demo gratuita <ArrowRight size={16} />
       </button>
       <p className="text-xs text-center text-white/25">Te mostramos cómo funcionaría en tu negocio. Sin compromiso.</p>
@@ -82,15 +81,15 @@ export default function Chatbots() {
       {/* HERO */}
       <section className="pt-28 pb-24 px-4 sm:px-6 lg:px-8 min-h-[80vh] flex items-center" data-acf-field="hero_chatbots">
         <div className="max-w-4xl mx-auto w-full flex flex-col items-center text-center">
-          <span className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold text-blue-300 mb-6"
-            style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
+          <span className="inline-block px-3 py-1.5 rounded-full text-xs font-semibold text-orange-300 mb-6"
+            style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
             Chatbots para Pymes y Ecommerce
           </span>
           <h1 className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6" data-acf-field="chatbots_h1">
             <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Responde a tus clientes
             </TextEffect>{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">
               <TextEffect per="word" preset="blur" delay={0.3} className="font-[family-name:var(--font-poppins)] text-4xl sm:text-5xl lg:text-6xl font-bold">
                 24/7 sin estar tú.
               </TextEffect>
@@ -102,13 +101,13 @@ export default function Chatbots() {
           <div className="flex flex-wrap justify-center gap-5 mb-12 text-sm">
             {["Configurado en <7 días", "Sin conocimientos técnicos", "Funciona en WhatsApp y web"].map((t) => (
               <span key={t} className="flex items-center gap-2 text-white/70">
-                <CheckCircle size={15} className="text-blue-400" aria-hidden="true" />{t}
+                <CheckCircle size={15} className="text-orange-400" aria-hidden="true" />{t}
               </span>
             ))}
           </div>
-          <Link href="#demo" className="bg-[#2563EB] hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 min-h-[52px] shadow-[0_0_30px_rgba(37,99,235,0.4)] transition-all">
+          <a href="#demo" className="bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-xl flex items-center gap-2 min-h-[52px] shadow-[0_0_30px_rgba(255,91,20,0.4)] transition-all">
             Quiero una demo gratuita <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
       </section>
 
@@ -116,8 +115,8 @@ export default function Chatbots() {
       <section className="py-24 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="problema_chatbots">
         <div className="max-w-3xl mx-auto text-center">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6"
-            style={{ background: "rgba(251,191,36,0.1)", border: "1px solid rgba(251,191,36,0.2)" }}>
-            <Clock size={24} className="text-amber-400" />
+            style={{ background: "rgba(255,186,8,0.1)", border: "1px solid rgba(255,186,8,0.2)" }}>
+            <Clock size={24} className="text-yellow-400" />
           </div>
           <h2 className="font-[family-name:var(--font-poppins)] text-3xl sm:text-4xl font-bold text-white mb-10">
             ¿Cuánto tiempo pierdes respondiendo siempre lo mismo?
@@ -129,8 +128,8 @@ export default function Chatbots() {
               "Carritos abandonados en tu tienda porque nadie resolvió la duda a tiempo.",
               "Leads que llegan pero tardan horas en recibir respuesta y se enfrían.",
             ].map((t) => (
-              <div key={t} className="glass-card flex items-start gap-4 p-5 hover:border-amber-500/20 transition-all">
-                <div className="w-2 h-2 rounded-full bg-amber-400 mt-2.5 shrink-0" aria-hidden="true" />
+              <div key={t} className="glass-card flex items-start gap-4 p-5 hover:border-yellow-500/20 transition-all">
+                <div className="w-2 h-2 rounded-full bg-yellow-400 mt-2.5 shrink-0" aria-hidden="true" />
                 <p className="text-white/70 text-sm leading-relaxed">{t}</p>
               </div>
             ))}
@@ -144,9 +143,9 @@ export default function Chatbots() {
           <h2 className="font-[family-name:var(--font-poppins)] text-3xl font-bold text-white text-center mb-10">Lo que hace el chatbot por ti</h2>
           <ol className="space-y-4">
             {CHATBOT_FUNCTIONS.map((f, i) => (
-              <li key={i} className="glass-card flex items-start gap-4 p-5 hover:border-blue-500/20 transition-all">
-                <span className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0 shadow-[0_0_10px_rgba(37,99,235,0.4)]"
-                  style={{ background: "rgba(37,99,235,0.7)", border: "1px solid rgba(37,99,235,0.4)" }}>
+              <li key={i} className="glass-card flex items-start gap-4 p-5 hover:border-orange-500/20 transition-all">
+                <span className="w-7 h-7 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0 shadow-[0_0_10px_rgba(255,91,20,0.4)]"
+                  style={{ background: "rgba(255,91,20,0.7)", border: "1px solid rgba(255,91,20,0.4)" }}>
                   {i + 1}
                 </span>
                 <p className="text-white/70 text-sm leading-relaxed">{f}</p>
@@ -162,10 +161,10 @@ export default function Chatbots() {
           <h2 className="font-[family-name:var(--font-poppins)] text-3xl font-bold text-white text-center mb-10">Cómo funciona en tu negocio</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {USE_CASES.map((u) => (
-              <article key={u.sector} className="glass-card p-6 hover:border-blue-500/20 transition-all">
+              <article key={u.sector} className="glass-card p-6 hover:border-orange-500/20 transition-all">
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                  style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
-                  <u.icon size={18} className="text-blue-400" aria-hidden="true" />
+                  style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
+                  <u.icon size={18} className="text-orange-400" aria-hidden="true" />
                 </div>
                 <h3 className="font-[family-name:var(--font-poppins)] font-bold text-white mb-2">{u.sector}</h3>
                 <p className="text-white/55 text-sm leading-relaxed">{u.desc}</p>
@@ -183,8 +182,8 @@ export default function Chatbots() {
             {STEPS.map((s, i) => (
               <div key={s.n} className="flex gap-5 items-start">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
-                  <span className="text-blue-400 font-bold text-sm">{s.n}</span>
+                  style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
+                  <span className="text-orange-400 font-bold text-sm">{s.n}</span>
                 </div>
                 <div className={`flex-1 pb-6 ${i < STEPS.length - 1 ? "border-b border-white/8" : ""}`}>
                   <h3 className="font-[family-name:var(--font-poppins)] font-bold text-white mb-1">{s.title}</h3>
@@ -200,13 +199,13 @@ export default function Chatbots() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="resultado">
         <div className="max-w-2xl mx-auto text-center">
           <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4"
-            style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
-            <Zap size={24} className="text-blue-400" />
+            style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
+            <Zap size={24} className="text-orange-400" />
           </div>
           <h2 className="font-[family-name:var(--font-poppins)] text-2xl font-bold text-white mb-3">
             Tu equipo deja de responder lo mismo 40 veces al día.
           </h2>
-          <p className="font-[family-name:var(--font-poppins)] text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-300 to-blue-500 my-4">67%</p>
+          <p className="font-[family-name:var(--font-poppins)] text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-orange-300 to-orange-500 my-4">67%</p>
           <p className="text-white/50 text-sm">de las consultas frecuentes se pueden automatizar desde el primer día.</p>
         </div>
       </section>

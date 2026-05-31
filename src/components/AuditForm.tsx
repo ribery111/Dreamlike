@@ -35,7 +35,7 @@ export function AuditForm({ id = "formulario" }: { id?: string }) {
   if (sent) {
     return (
       <div className="glass-card p-8 text-center" role="status" aria-live="polite">
-        <CheckCircle className="mx-auto mb-4 text-[#2563EB]" size={48} aria-hidden="true" />
+        <CheckCircle className="mx-auto mb-4 text-[#FF5B14]" size={48} aria-hidden="true" />
         <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-white mb-2">Lo hemos recibido.</h3>
         <p className="text-white/60 text-sm leading-relaxed">
           Nuestro equipo ya está analizando tu caso. Recibirás tu auditoría en{" "}
@@ -54,7 +54,7 @@ export function AuditForm({ id = "formulario" }: { id?: string }) {
           <span className="text-xs text-white/30">{step === 1 ? "Tu negocio" : "Cómo contactarte"}</span>
         </div>
         <div className="h-1 rounded-full bg-white/10">
-          <div className="h-1 bg-[#2563EB] rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(37,99,235,0.6)]" style={{ width: step === 1 ? "50%" : "100%" }} />
+          <div className="h-1 bg-[#FF5B14] rounded-full transition-all duration-300 shadow-[0_0_8px_rgba(255,91,20,0.6)]" style={{ width: step === 1 ? "50%" : "100%" }} />
         </div>
       </div>
 
@@ -75,13 +75,13 @@ export function AuditForm({ id = "formulario" }: { id?: string }) {
               </label>
               <select id="tipo_negocio" className={`${inputCls} cursor-pointer`}
                 value={form.tipo_negocio} onChange={(e) => setForm({ ...form, tipo_negocio: e.target.value })} aria-required="true">
-                <option value="" className="bg-[#0a0f2e]">Selecciona tu sector</option>
-                {BUSINESS_TYPES.map((t) => <option key={t} value={t} className="bg-[#0a0f2e]">{t}</option>)}
+                <option value="" className="bg-black">Selecciona tu sector</option>
+                {BUSINESS_TYPES.map((t) => <option key={t} value={t} className="bg-black">{t}</option>)}
               </select>
               {errors.tipo_negocio && <p className="text-red-400 text-xs mt-1" role="alert">{errors.tipo_negocio}</p>}
             </div>
             <button type="button" onClick={() => { if (v1()) setStep(2); }}
-              className="w-full bg-[#2563EB] hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors min-h-[44px] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+              className="w-full bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors min-h-[44px] flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,91,20,0.3)]">
               Continuar <ChevronRight size={18} aria-hidden="true" />
             </button>
           </div>
@@ -111,7 +111,7 @@ export function AuditForm({ id = "formulario" }: { id?: string }) {
                 Atrás
               </button>
               <button type="submit"
-                className="flex-1 bg-[#2563EB] hover:bg-blue-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors min-h-[44px] shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+                className="flex-1 bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-xl transition-colors min-h-[44px] shadow-[0_0_20px_rgba(255,91,20,0.3)]">
                 Quiero mi auditoría gratuita →
               </button>
             </div>

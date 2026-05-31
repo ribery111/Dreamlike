@@ -11,9 +11,9 @@ export default function Home() {
       {/* HERO */}
       <section className="pt-28 pb-32 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center" data-acf-field="hero_home">
         <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-semibold text-blue-300 border border-blue-500/20"
-            style={{ background: "rgba(37,99,235,0.12)", backdropFilter: "blur(8px)" }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-semibold text-orange-300 border border-orange-500/20"
+            style={{ background: "rgba(255,91,20,0.12)", backdropFilter: "blur(8px)" }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" aria-hidden="true" />
             Inteligencia. Datos. Resultados.
           </div>
 
@@ -21,7 +21,7 @@ export default function Home() {
             <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
               Más clientes para tu negocio.
             </TextEffect>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-200">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">
               <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold">
                 Con datos reales.
               </TextEffect>
@@ -36,14 +36,14 @@ export default function Home() {
           <div className="flex flex-wrap justify-center gap-5 mb-12 text-sm">
             {["Entrega en <24h", "Sin compromiso", "Datos verificados"].map((t) => (
               <span key={t} className="flex items-center gap-2 text-white/70">
-                <CheckCircle size={15} className="text-blue-400" aria-hidden="true" />{t}
+                <CheckCircle size={15} className="text-orange-400" aria-hidden="true" />{t}
               </span>
             ))}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/auditorias#formulario"
-              className="bg-[#2563EB] hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)]">
+              className="bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(255,91,20,0.4)] hover:shadow-[0_0_40px_rgba(255,91,20,0.6)]">
               Quiero mi auditoría gratuita <ArrowRight size={18} aria-hidden="true" />
             </Link>
             <Link href="/auditorias"
@@ -67,8 +67,8 @@ export default function Home() {
               "Has gastado en marketing y no sabes por qué no funcionó.",
               "Tu negocio depende de recomendaciones y no tienes control sobre las ventas.",
             ].map((t) => (
-              <li key={t} className="glass-card flex items-start gap-4 p-5 transition-all hover:border-blue-500/20">
-                <div className="w-2 h-2 rounded-full bg-blue-400 mt-2.5 shrink-0 shadow-[0_0_6px_rgba(96,165,250,0.8)]" aria-hidden="true" />
+              <li key={t} className="glass-card flex items-start gap-4 p-5 transition-all hover:border-orange-500/20">
+                <div className="w-2 h-2 rounded-full bg-orange-400 mt-2.5 shrink-0 shadow-[0_0_6px_rgba(255,91,20,0.8)]" aria-hidden="true" />
                 <p className="text-white/75 text-base leading-relaxed">{t}</p>
               </li>
             ))}
@@ -88,18 +88,18 @@ export default function Home() {
               { icon: Users, title: "Lista de Clientes", desc: "Tu próximo cliente ya existe. Hay que encontrarlo.", cta: "Ver listas", href: "/clientes", primary: false },
               { icon: MessageSquare, title: "Chatbots", desc: "Responde a tus clientes 24/7 sin estar tú.", cta: "Ver chatbots", href: "/chatbots", primary: false },
             ].map((s) => (
-              <article key={s.title} className="glass-card p-7 flex flex-col gap-4 hover:border-blue-500/30 transition-all duration-200 group">
+              <article key={s.title} className="glass-card p-7 flex flex-col gap-4 hover:border-orange-500/30 transition-all duration-200 group">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center"
-                  style={{ background: "rgba(37,99,235,0.15)", border: "1px solid rgba(37,99,235,0.25)" }}>
-                  <s.icon size={22} className="text-blue-400" aria-hidden="true" />
+                  style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
+                  <s.icon size={22} className="text-orange-400" aria-hidden="true" />
                 </div>
                 <h3 className="font-[family-name:var(--font-poppins)] text-xl font-bold text-white">{s.title}</h3>
                 <p className="text-white/55 text-sm leading-relaxed flex-1">{s.desc}</p>
                 <Link href={s.href}
                   className={`inline-flex items-center gap-2 font-semibold text-sm py-2.5 px-5 rounded-xl transition-all min-h-[44px] ${
                     s.primary
-                      ? "bg-[#2563EB] hover:bg-blue-500 text-white shadow-[0_0_16px_rgba(37,99,235,0.3)]"
-                      : "border border-blue-500/30 text-blue-400 hover:bg-blue-500/10"
+                      ? "bg-[#FF5B14] hover:bg-orange-500 text-white shadow-[0_0_16px_rgba(255,91,20,0.3)]"
+                      : "border border-orange-500/30 text-orange-400 hover:bg-orange-500/10"
                   }`}>
                   {s.cta} <ArrowRight size={15} aria-hidden="true" />
                 </Link>
@@ -112,7 +112,6 @@ export default function Home() {
       {/* PRUEBA SOCIAL */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 glass-section" data-acf-field="social_proof">
         <div className="max-w-5xl mx-auto">
-          {/* Stats con GlowingShadow */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
             {[
               { stat: "+10 años", label: "de experiencia en captación comercial" },
