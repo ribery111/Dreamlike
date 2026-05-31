@@ -14,25 +14,10 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!-- Fondo animado global -->
-<div class="bg-anim" aria-hidden="true">
-	<svg class="hidden" style="display:none">
-		<defs>
-			<filter id="blurMe">
-				<feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-				<feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
-				<feBlend in="SourceGraphic" in2="goo" />
-			</filter>
-		</defs>
-	</svg>
-	<div class="gradients">
-		<div class="g1"></div>
-		<div class="g2"></div>
-		<div class="g3"></div>
-		<div class="g4"></div>
-		<div class="g5"></div>
-		<div class="g-interactive"></div>
-	</div>
+<!-- Fondo shader WebGL global (MeshGradient — @paper-design/shaders) -->
+<div class="mesh-bg" aria-hidden="true">
+	<div id="pymes-mesh-base" class="mesh-layer"></div>
+	<div id="pymes-mesh-wire" class="mesh-layer mesh-wire"></div>
 </div>
 <div class="bg-overlay" aria-hidden="true"></div>
 
