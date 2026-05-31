@@ -1,56 +1,155 @@
 "use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, BarChart2, Users, MessageSquare } from "lucide-react";
+import { PulsingBorder } from "@paper-design/shaders-react";
 import { AuditForm } from "@/components/AuditForm";
 import { GlowingShadow } from "@/components/ui/glowing-shadow";
-import { TextEffect } from "@/components/ui/text-effect";
 
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="pt-28 pb-32 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center" data-acf-field="hero_home">
-        <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs font-semibold text-orange-300 border border-orange-500/20"
-            style={{ background: "rgba(255,91,20,0.12)", backdropFilter: "blur(8px)" }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" aria-hidden="true" />
-            Inteligencia. Datos. Resultados.
-          </div>
+      {/* HERO — full-screen, bottom-left layout */}
+      <section className="relative min-h-screen flex flex-col justify-end pb-16 px-4 sm:px-6 lg:px-8 pt-24">
+        {/* SVG filtros */}
+        <svg className="absolute w-0 h-0 overflow-hidden" aria-hidden="true">
+          <defs>
+            <filter id="glass-fx" x="-50%" y="-50%" width="200%" height="200%">
+              <feTurbulence baseFrequency="0.005" numOctaves="1" result="noise" />
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.3" />
+              <feColorMatrix type="matrix"
+                values="1 0 0 0 0.02  0 1 0 0 0.02  0 0 1 0 0.05  0 0 0 0.9 0" />
+            </filter>
+            <filter id="text-glow-h" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
 
-          <h1 className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 max-w-5xl" data-acf-field="hero_h1">
-            <TextEffect per="word" preset="blur" className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-              Más clientes para tu negocio.
-            </TextEffect>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-yellow-300">
-              <TextEffect per="word" preset="blur" delay={0.4} className="font-[family-name:var(--font-poppins)] text-5xl sm:text-6xl lg:text-7xl font-bold">
-                Con datos reales.
-              </TextEffect>
+        <div className="max-w-2xl" data-acf-field="hero_home">
+          {/* Badge */}
+          <motion.div
+            className="inline-flex items-center px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm mb-6 border border-white/10 relative"
+            style={{ filter: "url(#glass-fx)" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <span className="text-white/90 text-sm font-medium tracking-wide">
+              ✦ Inteligencia. Datos. Resultados.
             </span>
-          </h1>
+          </motion.div>
 
-          <p className="text-white/60 text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl" data-acf-field="hero_subtitle">
+          {/* H1 */}
+          <motion.h1
+            className="font-[family-name:var(--font-poppins)] font-bold text-white leading-none tracking-tight mb-6"
+            style={{ fontSize: "clamp(2.8rem,7vw,5rem)" }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            data-acf-field="hero_h1"
+          >
+            <span
+              className="block font-light mb-1"
+              style={{
+                fontSize: "clamp(1.6rem,4vw,2.8rem)",
+                background: "linear-gradient(135deg,#fff 0%,#FF5B14 40%,#FFBA08 70%,#fff 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                filter: "url(#text-glow-h)",
+              }}
+            >
+              Más clientes para tu negocio.
+            </span>
+            <span className="block font-black text-white drop-shadow-2xl">Con datos</span>
+            <span className="block font-light text-white/80 italic">reales.</span>
+          </motion.h1>
+
+          {/* Subtítulo */}
+          <motion.p
+            className="text-base font-light text-white/65 mb-8 leading-relaxed max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            data-acf-field="hero_subtitle"
+          >
             Analizamos tu mercado, identificamos a tu cliente ideal y te decimos exactamente cómo llegar a él.{" "}
-            <strong className="text-white/90">En menos de 24 horas.</strong>
-          </p>
+            <strong className="text-white/85 font-medium">En menos de 24 horas.</strong>
+          </motion.p>
 
-          <div className="flex flex-wrap justify-center gap-5 mb-12 text-sm">
+          {/* Badges trust */}
+          <motion.div
+            className="flex flex-wrap gap-4 mb-8 text-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.9 }}
+          >
             {["Entrega en <24h", "Sin compromiso", "Datos verificados"].map((t) => (
-              <span key={t} className="flex items-center gap-2 text-white/70">
-                <CheckCircle size={15} className="text-orange-400" aria-hidden="true" />{t}
+              <span key={t} className="flex items-center gap-2 text-white/60">
+                <CheckCircle size={14} className="text-orange-400" aria-hidden="true" />{t}
               </span>
             ))}
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/auditorias#formulario"
-              className="bg-[#FF5B14] hover:bg-orange-500 text-white font-semibold px-8 py-4 rounded-xl transition-all flex items-center gap-2 min-h-[52px] justify-center shadow-[0_0_30px_rgba(255,91,20,0.4)] hover:shadow-[0_0_40px_rgba(255,91,20,0.6)]">
-              Quiero mi auditoría gratuita <ArrowRight size={18} aria-hidden="true" />
-            </Link>
+          {/* CTAs */}
+          <motion.div
+            className="flex flex-wrap gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 1.0 }}
+          >
             <Link href="/auditorias"
-              className="px-8 py-4 rounded-xl font-medium min-h-[52px] flex items-center justify-center transition-all text-white/70 hover:text-white"
-              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}>
+              className="px-8 py-3.5 rounded-full bg-transparent border border-white/30 text-white font-medium text-sm hover:bg-white/10 hover:border-orange-400/50 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 min-h-[48px]">
               Ver cómo funciona
             </Link>
+            <Link href="/auditorias#formulario"
+              className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#FF5B14] to-[#FFBA08] text-white font-semibold text-sm hover:from-orange-500 hover:to-yellow-400 transition-all duration-300 shadow-lg shadow-orange-500/25 flex items-center gap-2 min-h-[48px]">
+              Quiero mi auditoría gratis <ArrowRight size={16} />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* PulsingBorder — bottom right */}
+        <div className="absolute bottom-8 right-6 sm:right-8 z-10">
+          <div className="relative w-20 h-20 flex items-center justify-center">
+            <PulsingBorder
+              colors={["#FF5B14", "#FFBA08", "#E8185C", "#ffffff", "#FF5B14"]}
+              colorBack="#00000000"
+              speed={1.5}
+              roundness={1}
+              thickness={0.1}
+              softness={0.2}
+              intensity={5}
+              spotsPerColor={5}
+              spotSize={0.1}
+              pulse={0.1}
+              smoke={0.5}
+              smokeSize={4}
+              scale={0.65}
+              rotation={0}
+              style={{ width: "60px", height: "60px", borderRadius: "50%" }}
+            />
+            <motion.svg
+              className="absolute inset-0 w-full h-full"
+              viewBox="0 0 100 100"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              style={{ transform: "scale(1.6)" }}
+            >
+              <defs>
+                <path id="hcircle" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+              </defs>
+              <text fontSize="8" fill="rgba(255,255,255,0.65)" fontFamily="Inter,sans-serif">
+                <textPath href="#hcircle" startOffset="0%">
+                  PymesAI • Datos Reales • 24h • PymesAI •
+                </textPath>
+              </text>
+            </motion.svg>
           </div>
         </div>
       </section>
@@ -88,7 +187,7 @@ export default function Home() {
               { icon: Users, title: "Lista de Clientes", desc: "Tu próximo cliente ya existe. Hay que encontrarlo.", cta: "Ver listas", href: "/clientes", primary: false },
               { icon: MessageSquare, title: "Chatbots", desc: "Responde a tus clientes 24/7 sin estar tú.", cta: "Ver chatbots", href: "/chatbots", primary: false },
             ].map((s) => (
-              <article key={s.title} className="glass-card p-7 flex flex-col gap-4 hover:border-orange-500/30 transition-all duration-200 group">
+              <article key={s.title} className="glass-card p-7 flex flex-col gap-4 hover:border-orange-500/30 transition-all duration-200">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center"
                   style={{ background: "rgba(255,91,20,0.15)", border: "1px solid rgba(255,91,20,0.25)" }}>
                   <s.icon size={22} className="text-orange-400" aria-hidden="true" />
@@ -98,7 +197,7 @@ export default function Home() {
                 <Link href={s.href}
                   className={`inline-flex items-center gap-2 font-semibold text-sm py-2.5 px-5 rounded-xl transition-all min-h-[44px] ${
                     s.primary
-                      ? "bg-[#FF5B14] hover:bg-orange-500 text-white shadow-[0_0_16px_rgba(255,91,20,0.3)]"
+                      ? "bg-gradient-to-r from-[#FF5B14] to-[#FFBA08] text-white shadow-[0_0_16px_rgba(255,91,20,0.3)]"
                       : "border border-orange-500/30 text-orange-400 hover:bg-orange-500/10"
                   }`}>
                   {s.cta} <ArrowRight size={15} aria-hidden="true" />
@@ -120,9 +219,7 @@ export default function Home() {
             ].map((s) => (
               <GlowingShadow key={s.stat}>
                 <div className="flex flex-col items-center justify-center text-center px-2">
-                  <span className="font-[family-name:var(--font-poppins)] text-3xl font-bold text-white leading-none mb-1">
-                    {s.stat}
-                  </span>
+                  <span className="font-[family-name:var(--font-poppins)] text-3xl font-bold text-white leading-none mb-1">{s.stat}</span>
                   <span className="text-white/50 text-xs leading-tight max-w-[120px]">{s.label}</span>
                 </div>
               </GlowingShadow>
